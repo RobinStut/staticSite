@@ -1,0 +1,16 @@
+{% extends "layout/main.njk" %}
+
+{% block content %}
+{% include "partials/navigation/navigation.njk" %}
+  <h1>{{ title }}</h1>
+
+{% for image in parallax %}
+  <div class="gallery__item">
+    <img src="{{image}}">
+  </div>
+  {% endfor %}
+
+  {{ content | safe }}
+
+
+{% endblock %}
