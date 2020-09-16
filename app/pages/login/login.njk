@@ -2,16 +2,22 @@
 "partials/navigation/navigation.njk" %}
 <h1>{{ title }}</h1>
 
-{% for image in parallax %}
-<div class="gallery__item">
-	<img src="{{ image }}" />
-</div>
-{% endfor %}
+<strong class="notification" data-notification-handle></strong>
+<form action="" login-form>
+	<label>
+		Email
+		<input type="email" email-input />
+	</label>
+
+	<label>
+		Wachtwoord
+		<input type="password" password-input />
+	</label>
+	<button login-button>Login</button>
+	<button class="hide" register-button>Registreer account</button>
+</form>
+<button type="submit" signUp-button>Maak account</button>
 
 {{ content | safe }}
 
-{% include "partials/firebase/firebase.njk" %}
-
-<script src="../../firebase.js"></script>
-
-{% endblock %}
+{% include "partials/firebase/firebase.njk" %} {% endblock %}
